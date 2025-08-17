@@ -13,10 +13,15 @@ class Administrateur(models.Model):
     phone_number = models.CharField(max_length=120, blank = True)
     email = models.EmailField(blank = True)
 
-
+class Syndicat(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    name = models.CharField(max_length=120, blank = True)
+    last_name = models.CharField(max_length=120,blank = True)
+    phone_number = models.CharField(max_length=200,blank = True)
+    email = models.EmailField(blank = True)
 
 class Residence(models.Model):
-    adress = models.CharField(max_length=500)
+    address = models.CharField(max_length=500)
     name = models.CharField(max_length=120, blank = True)
     balance = models.CharField(max_length= 120,blank = True)
 
